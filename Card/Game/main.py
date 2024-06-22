@@ -4,6 +4,7 @@ import var, const, asset, UI
 import scenetitle, scenefield, scenegame
 
 def init():
+    pygame.init()
     var.screen = pygame.display.set_mode(var.resolution)
     pygame.display.set_caption('Card')
     var.clock = pygame.time.Clock()
@@ -22,6 +23,8 @@ def handle_input():
 def handle_scene():
     pass
 
-if __name__ == '__main__':
-    init()
-    main()
+def handle_input():
+    pass
+
+init()
+main()
