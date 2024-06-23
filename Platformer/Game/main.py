@@ -1,27 +1,31 @@
 import pygame, sys
-
 import var, const, asset, UI
-import scenetitle, scenefield, scenegame
+import scenetitle, scenegame
 
 def init():
     pygame.init()
     var.screen = pygame.display.set_mode(var.resolution)
-    pygame.display.set_caption('Card')
+    pygame.display.set_caption('Platformer')
     var.clock = pygame.time.Clock()
 
 def main():
     while True:
         var.clock.tick(var.FPS)
-        handle_input()
         handle_scene()
+        handle_input()
+
+def handle_scene():
+    if var.scene == 'title':
+        scenetitle.loop()
+
+    elif var.scene == 'scenegame':
+        scenegame.loop()
 
 def handle_input():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
 
-def handle_scene():
-    pass
-
-init()
-main()
+if __name__ == '__main__':
+    init()
+    main()
