@@ -1,12 +1,7 @@
 import pygame, sys
 
-import var
-import const
-import asset
-import UI
-import scenetitle
-import scenefield
-import scenegame
+import var, const, asset, UI
+import scenetitle, scenefield, scenegame
 
 def init():
     var.screen = pygame.display.set_mode(var.resolution)
@@ -25,9 +20,6 @@ def handle_input():
             sys.exit()
 
 def handle_scene():
-    pass
-
-def handle_input():
     pass
 
 init()
