@@ -8,12 +8,21 @@ def init():
     var.screen = pygame.display.set_mode(var.resolution)
     pygame.display.set_caption('Card')
     var.clock = pygame.time.Clock()
+    load_font()
+    load_image()
 
 def main():
     while True:
         var.clock.tick(var.FPS)
         handle_input()
         handle_scene()
+
+def load_font():
+    pygame.font.init()
+    asset.Font.neodgm_32 = pygame.font.Font('Font/neodgm.ttf', 32)
+
+def load_image():
+    pass
 
 def handle_input():
     for event in pygame.event.get():
@@ -35,7 +44,7 @@ def handle_input():
             elif var.scene == 'game':
                 scenegame.mouse_up(x, y, button)
 
-        if event.type == pygame.KEYBUTTONDOWN:
+        if event.type == pygame.KEYDOWN:
             key = event.key
 
             if var.scene == 'title':
@@ -47,7 +56,7 @@ def handle_input():
             elif var.scene == 'game':
                 scenegame.key_down(key)
 
-        if event.type == pygame.KEYBUTTONUP:
+        if event.type == pygame.KEYUP:
             if var.scene == 'title':
                 scenetitle.key_up(key)
 
