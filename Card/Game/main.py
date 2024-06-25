@@ -57,6 +57,8 @@ def handle_input():
                 scenegame.key_down(key)
 
         if event.type == pygame.KEYUP:
+            key = event.key
+
             if var.scene == 'title':
                 scenetitle.key_up(key)
 
