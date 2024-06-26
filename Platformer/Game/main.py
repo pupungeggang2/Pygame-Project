@@ -7,6 +7,15 @@ def init():
     var.screen = pygame.display.set_mode(var.resolution)
     pygame.display.set_caption('Platformer')
     var.clock = pygame.time.Clock()
+    load_font()
+    load_image()
+
+def load_font():
+    pygame.font.init()
+    asset.Font.neodgm_32 = pygame.font.Font('Font/neodgm.ttf', 32)
+
+def load_image():
+    pass
 
 def main():
     while True:
@@ -25,6 +34,36 @@ def handle_input():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
+
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            mouse = pygame.mouse.get_pos()
+            x = mouse[0]
+            y = mouse[1]
+            button = event.button
+
+            if var.scene == 'title':
+                scenetitle.mouse_up(x, y, button)
+
+            elif var.scene == 'game':
+                scenegame.mouse_up(x, y, button)
+
+        if event.type == pygame.KEYDOWN:
+            key = event.key
+
+            if var.scene == 'title':
+                scenetitle.key_down(key)
+
+            elif var.scene == 'game':
+                scenegame.key_down(key)
+
+        if event.type == pygame.KEYUP:
+            key = event.key
+
+            if var.scene == 'title':
+                scenetitle.key_up(key)
+
+            elif var.scene == 'game':
+                scenegame.key_up(key)
 
 if __name__ == '__main__':
     init()
