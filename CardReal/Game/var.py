@@ -6,3 +6,6 @@ clock = None
 scene = 'title'
 state = ''
 menu = False
+
+class Selected():
+    character = -1
