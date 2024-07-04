@@ -15,6 +15,9 @@ def display():
     for i in range(6):
         pygame.draw.rect(var.screen, const.Color.black, UI.Ready.button_character[i], 2)
 
+    if var.Selected.character != -1:
+        pygame.draw.rect(var.screen, const.Color.green, UI.Ready.button_character[var.Selected.character], 4)
+
     pygame.draw.rect(var.screen, const.Color.black, UI.Ready.button_start, 2)
     var.screen.blit(asset.Font.neodgm_32.render('Start', False, const.Color.black), UI.Ready.text_start)
 
