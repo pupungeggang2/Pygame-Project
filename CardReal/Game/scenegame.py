@@ -6,7 +6,8 @@ def loop():
     display()
 
 def display():
-    pass
+    var.screen.fill(const.Color.white)
+    pygame.display.update()
 
 def mouse_up(x, y, button):
     pass
