@@ -1,6 +1,6 @@
 import sys, pygame
 import asset, const, var, UI
-import funcphysics, funcdraw
+import funcphysics, funcdraw, funcgame
 
 def loop():
     display()
@@ -39,7 +39,8 @@ def mouse_up(x, y, button):
                 if funcphysics.point_inside_rect_array(x, y, UI.Ready.button_start):
                     if var.Selected.character != -1:
                         var.scene = 'game'
-                        var.state = ''
+                        var.state = 'start'
+                        funcgame.init_game()
                         var.Selected.character = -1
 
 def key_down(key):
