@@ -1,6 +1,7 @@
 import sys, pygame
 import asset, const, var, UI
 import scenetitle, sceneready, scenegame
+import json
 
 def init():
     pygame.init()
@@ -9,6 +10,7 @@ def init():
     var.clock = pygame.time.Clock()
     load_font()
     load_image()
+    load_data()
 
 def load_font():
     pygame.font.init()
@@ -16,6 +18,20 @@ def load_font():
 
 def load_image():
     pass
+
+def load_data():
+    f = open('Data/card.txt', 'r')
+    const.Data.card = json.load(f)
+    f.close()
+    f = open('Data/equipment.txt', 'r')
+    const.Data.equipment = json.load(f)
+    f.close()
+    f = open('Data/item.txt', 'r')
+    const.Data.item = json.load(f)
+    f.close()
+    f = open('Data/start_deck.txt', 'r')
+    const.Data.start_deck = json.load(f)
+    f.close()
 
 def main():
     while True:

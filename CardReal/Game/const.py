@@ -6,3 +6,5 @@ class Color():
 class Data():
     start_deck = {}
     card = {}
+    item = {}
+    equipment = {}
