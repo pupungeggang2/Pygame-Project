@@ -8,7 +8,7 @@ def loop():
 def display():
     var.screen.fill(const.Color.white)
 
-    var.screen.blit(asset.Font.neodgm_32.render('Select Character', False, const.Color.black), UI.Ready.text_title)
+    var.screen.blit(asset.Font.main_32.render('Select Character', False, const.Color.black), UI.Ready.text_title)
 
     pygame.draw.rect(var.screen, const.Color.black, UI.Ready.button_back, 2)
 
@@ -19,7 +19,7 @@ def display():
         pygame.draw.rect(var.screen, const.Color.green, UI.Ready.button_character[var.Selected.character], 4)
 
     pygame.draw.rect(var.screen, const.Color.black, UI.Ready.button_start, 2)
-    var.screen.blit(asset.Font.neodgm_32.render('Start', False, const.Color.black), UI.Ready.text_start)
+    var.screen.blit(asset.Font.main_32.render('Start', False, const.Color.black), UI.Ready.text_start)
 
     pygame.display.update()
 

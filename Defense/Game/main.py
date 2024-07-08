@@ -1,16 +1,19 @@
-import sys, pygame
-import asset, const, var, UI
-import scenetitle, sceneready, scenegame
+import pygame, sys
+import asset, UI, const, var
+import scenetitle, scenelevelselect, scenegame
 import json
 
 def init():
     pygame.init()
     var.screen = pygame.display.set_mode(var.resolution)
-    pygame.display.set_caption('Card Real Time')
+    pygame.display.set_caption('Defense')
     var.clock = pygame.time.Clock()
-    load_font()
     load_image()
-    load_data()
+    load_font()
+    load_file()
+
+def load_image():
+    pass
 
 def load_font():
     pygame.font.init()
@@ -20,25 +23,11 @@ def load_font():
     except:
         asset.Font.main_32 = pygame.font.SysFont(None, 32)
 
-def load_image():
+def load_file():
     pass
 
-def load_data():
-    f = open('Data/card.txt', 'r')
-    const.Data.card = json.load(f)
-    f.close()
-    f = open('Data/equipment.txt', 'r')
-    const.Data.equipment = json.load(f)
-    f.close()
-    f = open('Data/item.txt', 'r')
-    const.Data.item = json.load(f)
-    f.close()
-    f = open('Data/start_deck.txt', 'r')
-    const.Data.start_deck = json.load(f)
-    f.close()
-
 def main():
-    while True:
+    while True():
         var.clock.tick(var.FPS)
         handle_scene()
         handle_input()
@@ -47,8 +36,8 @@ def handle_scene():
     if var.scene == 'title':
         scenetitle.loop()
 
-    elif var.scene == 'ready':
-        sceneready.loop()
+    elif var.scene == 'level_select':
+        scenelevelselect.loop()
 
     elif var.scene == 'game':
         scenegame.loop()
@@ -66,9 +55,9 @@ def handle_input():
 
             if var.scene == 'title':
                 scenetitle.mouse_up(x, y, button)
-            
-            elif var.scene == 'ready':
-                sceneready.mouse_up(x, y, button)
+
+            elif var.scene == 'level_select':
+                scenelevelselect.mouse_up(x, y, button)
 
             elif var.scene == 'game':
                 scenegame.mouse_up(x, y, button)
@@ -79,20 +68,20 @@ def handle_input():
             if var.scene == 'title':
                 scenetitle.key_down(key)
 
-            elif var.scene == 'ready':
-                sceneready.key_down(key)
+            elif var.scene == 'level_select':
+                scenelevelselect.key_down(key)
 
             elif var.scene == 'game':
                 scenegame.key_down(key)
 
-        if event.type == pygame.KEYUP:
+        if event.type == pygame.KEYUp:
             key = event.key
 
             if var.scene == 'title':
                 scenetitle.key_up(key)
 
-            elif var.scene == 'ready':
-                sceneready.key_up(key)
+            elif var.scene == 'level_select':
+                scenelevelselect.key_up(key)
 
             elif var.scene == 'game':
                 scenegame.key_up(key)
