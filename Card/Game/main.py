@@ -8,7 +8,20 @@ def init():
     pygame.display.set_caption('Card')
     var.clock = pygame.time.Clock()
 
+    load_font()
+    load_image()
     load_data()
+
+def load_font():
+    pygame.font.init()
+
+    try:
+        asset.Font.main_32 = pygame.font.Font('Font/neodgm.ttf', 32)
+    except:
+        asset.Font.main_32 = pygame.font.SysFont(None, 32)
+
+def load_image():
+    pass
 
 def load_data():
     f = open('Data/data_card.txt', 'r')
