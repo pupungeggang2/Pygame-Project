@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys, ast
 import asset, UI, const, var
 import scenetitle, scenefield, scenegame
 
@@ -7,6 +7,13 @@ def init():
     var.screen = pygame.display.set_mode(var.resolution)
     pygame.display.set_caption('Card')
     var.clock = pygame.time.Clock()
+
+    load_data()
+
+def load_data():
+    f = open('Data/data_card.txt', 'r')
+    const.Data.card = ast.literal_eval(f.read())
+    f.close()
 
 def main():
     while True:
@@ -19,9 +26,55 @@ def handle_input():
         if event.type == pygame.QUIT:
             sys.exit()
 
+        if event.type == pygame.MOUSEBUTTONUP:
+            mouse = pygame.mouse.get_pos()
+            x = mouse[0]
+            y = mouse[1]
+            button = event.button
+
+            if var.scene == 'title':
+                scenetitle.mouse_up(x, y, button)
+
+            elif var.scene == 'field':
+                scenefield.mouse_up(x, y, button)
+
+            elif var.scene == 'game':
+                scenegame.mouse_up(x, y, button)
+
+        if event.type == pygame.KEYDOWN:
+            key = event.key
+
+            if var.scene == 'title':
+                scenetitle.key_down(key)
+
+            elif var.scene == 'field':
+                scenefield.key_down(key)
+
+            elif var.scene == 'game':
+                scenegame.key_down(key)
+
+        if event.type == pygame.KEYUP:
+            key = event.key
+
+            if var.scene == 'title':
+                scenetitle.key_up(key)
+
+            elif var.scene == 'field':
+                scenefield.key_up(key)
+
+            elif var.scene == 'game':
+                scenegame.key_up(key)
+
 def handle_scene():
-    pass
-    
+    if var.scene == 'title':
+        scenetitle.loop()
+
+    elif var.scene == 'field':
+        scenefield.loop()
+
+    elif var.scene == 'game':
+        scenegame.loop()
+
 if __name__ == '__main__':
     init()
     main()
