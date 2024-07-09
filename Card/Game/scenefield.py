@@ -7,6 +7,11 @@ def loop():
 
 def display():
     var.screen.fill(const.Color.white)
+
+    pygame.draw.rect(var.screen, const.Color.black, UI.Field.button_menu, 2)
+
+    pygame.draw.rect(var.screen, const.Color.black, UI.Field.button_info, 2)
+
     pygame.display.update()
 
 def mouse_up(x, y, button):
