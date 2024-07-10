@@ -1,5 +1,5 @@
 import sys, pygame
-import asset, const, var, UI
+import asset, const, data, var, UI
 import scenetitle, sceneready, scenegame
 import json
 
@@ -25,16 +25,16 @@ def load_image():
 
 def load_data():
     f = open('Data/card.txt', 'r')
-    const.Data.card = json.load(f)
+    data.card = json.load(f)
     f.close()
     f = open('Data/equipment.txt', 'r')
-    const.Data.equipment = json.load(f)
+    data.equipment = json.load(f)
     f.close()
     f = open('Data/item.txt', 'r')
-    const.Data.item = json.load(f)
+    data.item = json.load(f)
     f.close()
     f = open('Data/start_deck.txt', 'r')
-    const.Data.start_deck = json.load(f)
+    data.start_deck = json.load(f)
     f.close()
 
 def main():

@@ -1,5 +1,5 @@
 import pygame, sys, ast
-import asset, UI, const, var
+import asset, UI, data, const, var
 import scenetitle, scenefield, scenegame
 
 def init():
@@ -25,7 +25,7 @@ def load_image():
 
 def load_data():
     f = open('Data/data_card.txt', 'r')
-    const.Data.card = ast.literal_eval(f.read())
+    data.card = ast.literal_eval(f.read())
     f.close()
 
 def main():
