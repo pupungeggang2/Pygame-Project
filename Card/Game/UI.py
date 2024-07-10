@@ -9,6 +9,10 @@ class Field():
     button_menu = [1220, 20, 40, 40]
     button_info = [1220, 660, 40, 40]
 
+class Info():
+    rect = [80, 80, 1120, 560]
+    button_close = [1160, 80, 40, 40]
+
 class Menu():
     rect = [320, 240, 640, 240]
     text_paused = [328, 264]
