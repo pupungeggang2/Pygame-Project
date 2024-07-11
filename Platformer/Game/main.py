@@ -15,7 +15,11 @@ def load_data():
     pass
 
 def load_font():
-    pass
+    pygame.font.init()
+    try:
+        asset.Font.main_32 = pygame.font.Font('Font/neodgm.ttf', 32)
+    except:
+        asset.Font.main_32 = pygame.font.SysFont(None, 32)
 
 def load_image():
     pass
@@ -68,6 +72,6 @@ def handle_input():
             elif var.scene == 'field':
                 scenefield.key_up(key)
 
-if __name__ == '__init__':
+if __name__ == '__main__':
     init()
     main()
