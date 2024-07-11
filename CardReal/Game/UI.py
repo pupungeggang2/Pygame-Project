@@ -16,6 +16,11 @@ class Ready():
 
 class Game():
     button_menu = [1220, 20, 40, 40]
+    
+    class Lower_Bar():
+        ability = [40, 600, 80, 80]
+        hand = [120, 600, 640, 80]
+        card_back = [760, 600, 80, 80]
 
 class Menu():
     rect = [320, 240, 640, 240]

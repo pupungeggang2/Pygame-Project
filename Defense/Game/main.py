@@ -27,7 +27,7 @@ def load_file():
     pass
 
 def main():
-    while True():
+    while True:
         var.clock.tick(var.FPS)
         handle_scene()
         handle_input()
@@ -74,7 +74,7 @@ def handle_input():
             elif var.scene == 'game':
                 scenegame.key_down(key)
 
-        if event.type == pygame.KEYUp:
+        if event.type == pygame.KEYUP:
             key = event.key
 
             if var.scene == 'title':

@@ -18,4 +18,7 @@ class Player():
     defense = 0
 
 class Field():
+    position_player = [0, 0]
+    destination = [0, 0]
+    camera = [0, 0]
     enemy = []

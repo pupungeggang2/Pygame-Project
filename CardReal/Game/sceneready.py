@@ -41,6 +41,7 @@ def mouse_up(x, y, button):
                         var.scene = 'game'
                         var.state = 'start'
                         funcgame.init_game()
+                        funcgame.move_camera()
                         var.Selected.character = -1
 
 def key_down(key):
