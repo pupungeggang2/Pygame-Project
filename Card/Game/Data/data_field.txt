@@ -1,0 +1,11 @@
+{
+    'home_town' : {
+        'village' : True,
+        'wall' : [],
+        'thing' : [],
+        'connection' : [
+            [[0, -320, 80, 80], 'field_1', [0, 320]]
+        ],
+        'spawn' : [0, 0]
+    }
+}

@@ -1,5 +1,5 @@
 import sys, pygame
-import asset, UI, const, var
+import asset, UI, data, const, var
 import funcphysics
 
 def loop():
@@ -23,6 +23,13 @@ def mouse_up(x, y, button):
                 if funcphysics.point_inside_rect_array(x, y, UI.Title.button_start):
                     var.scene = 'field'
                     var.state = ''
+                    var.Field.place = var.save['place']
+                    var.Field.position_player = data.field[var.Field.place]['spawn']
+                    var.Field.wall = data.field[var.Field.place]['wall']
+                    var.Field.thing = data.field[var.Field.place]['thing']
+                    var.Field.connection = data.field[var.Field.place]['connection']
+                    var.Field.village = data.field[var.Field.place]['village']
+                    print(var.Field.village)
 
 def key_down(key):
     pass

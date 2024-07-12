@@ -1,6 +1,7 @@
 import pygame, sys, ast
 import asset, UI, data, const, var
 import scenetitle, scenefield, scenegame
+import funcsave
 
 def init():
     pygame.init()
@@ -11,6 +12,8 @@ def init():
     load_font()
     load_image()
     load_data()
+
+    funcsave.save_init()
 
 def load_font():
     pygame.font.init()
@@ -26,6 +29,9 @@ def load_image():
 def load_data():
     f = open('Data/data_card.txt', 'r')
     data.card = ast.literal_eval(f.read())
+    f.close()
+    f = open('Data/data_field.txt')
+    data.field = ast.literal_eval(f.read())
     f.close()
 
 def main():
