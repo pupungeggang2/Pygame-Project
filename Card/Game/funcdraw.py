@@ -16,4 +16,4 @@ def draw_info():
     pygame.draw.rect(var.screen, const.Color.black, UI.Info.button_close, 2)
 
 def draw_field():
-    pygame.draw.rect(var.screen, const.Color.black, [var.Field.position_player[0], var.Field.position_player[1], 40, 40], 2)
+    pygame.draw.rect(var.screen, const.Color.black, [var.Field.position_player[0] - var.Field.camera[0] - 20, var.Field.position_player[1] - var.Field.camera[1] - 20, 40, 40], 2)

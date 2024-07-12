@@ -18,6 +18,10 @@ def move_player():
     var.Field.position_player[0] = temp_position[0]
     var.Field.position_player[1] = temp_position[1]
 
+def camera_adjust():
+    var.Field.camera[0] = var.Field.position_player[0] - 640
+    var.Field.camera[1] = var.Field.position_player[1] - 360
+
 def load_field(place):
     var.Field.place = place
     var.Field.thing = data.field[var.Field.place]['thing']

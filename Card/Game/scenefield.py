@@ -6,6 +6,7 @@ def loop():
     if var.menu == False:
         if var.state == '':
             funcfield.move_player()
+            funcfield.camera_adjust()
 
     display()
 
