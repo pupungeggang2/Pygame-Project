@@ -18,6 +18,9 @@ def display():
     funcdraw.draw_field()
     funcdraw.draw_lower_bar()
 
+    if var.state == 'start':
+        funcdraw.draw_start()
+
     if var.menu == True:
         funcdraw.draw_menu()
 
@@ -37,6 +40,14 @@ def mouse_up(x, y, button):
         elif var.menu == False:
             if funcphysics.point_inside_rect_array(x, y, UI.Game.button_menu):
                 var.menu = True
+
+            if var.state == 'start':
+                for i in range(3):
+                    if funcphysics.point_inside_rect_array(x, y, UI.Game.Start.button_select[i]):
+                        var.Selected.start_equipment = i
+                
+                if funcphysics.point_inside_rect_array(x, y, UI.Game.Start.button_start):
+                    var.state = ''
 
 def key_down(key):
     pass

@@ -9,6 +9,7 @@ menu = False
 
 class Selected():
     character = -1
+    start_equipment = -1
 
 class Player():
     id = -1

@@ -16,6 +16,13 @@ class Ready():
 
 class Game():
     button_menu = [1220, 20, 40, 40]
+
+    class Start():
+        rect = [160, 80, 960, 560]
+        text_title = [168, 88]
+        button_start = [560, 520, 160, 80]
+        button_select = [[240, 160, 160, 160], [560, 160, 160, 160], [880, 160, 160, 160]]
+        text_start = [568, 544]
     
     class Lower_Bar():
         ability = [40, 600, 80, 80]

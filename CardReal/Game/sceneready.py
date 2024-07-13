@@ -40,6 +40,7 @@ def mouse_up(x, y, button):
                     if var.Selected.character != -1:
                         var.scene = 'game'
                         var.state = 'start'
+                        var.Player.id = var.Selected.character
                         funcgame.init_game()
                         funcgame.move_camera()
                         var.Selected.character = -1
