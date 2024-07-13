@@ -1,18 +1,21 @@
 import pygame, sys, ast
 import asset, UI, data, const, var
-import scenetitle, scenefield
+import scenetitle, scenefield, funcsave
 
 def init():
     pygame.init()
     var.screen = pygame.display.set_mode(var.resolution)
     pygame.display.set_caption('Platformer')
     var.clock = pygame.time.Clock()
+    funcsave.save_init()
     load_data()
     load_font()
     load_image()
 
 def load_data():
-    pass
+    f = open('Data/data_field.txt', 'r')
+    data.field = ast.literal_eval(f.read())
+    f.close()
 
 def load_font():
     pygame.font.init()

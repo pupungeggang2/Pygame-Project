@@ -1,14 +1,20 @@
 import pygame
 import asset, UI, data, const, var
-import funcdraw, funcphysics
+import funcdraw, funcphysics, funcgame
 
 def loop():
+    if var.menu == False:
+        if var.state == '':
+            funcgame.move_player()
+            funcgame.move_camera()
+
     display()
 
 def display():
     var.screen.fill(const.Color.white)
 
     pygame.draw.rect(var.screen, const.Color.black, UI.Field.button_menu, 2)
+    funcdraw.draw_field()
 
     if var.menu == True:
         funcdraw.draw_menu()
