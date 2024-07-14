@@ -16,12 +16,13 @@ class Pressed():
     down = False
 
 class Field():
-    position_player = [0, 0]
-    place = ''
+    place = 'home_town'
+    village = True
+    enemy = []
     thing = []
     connection = []
     wall = []
-    village = True
+    position_player = [0, 0]
     camera = [0, 0]
 
 class Player():

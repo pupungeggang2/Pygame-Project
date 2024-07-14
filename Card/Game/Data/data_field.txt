@@ -4,7 +4,17 @@
         'wall' : [],
         'thing' : [],
         'connection' : [
-            [[0, -320, 80, 80], 'field_1', [0, 320]]
+            [[600, 40, 80, 80], 'field_1', [640, 1200]],
+        ],
+        'spawn' : [640, 640]
+    },
+
+    'field_1' : {
+        'village' : False,
+        'wall' : [],
+        'thing' : [],
+        'connection' : [
+            [[600, 1160, 80, 80], 'home_town', [640, 80]],
         ],
         'spawn' : [0, 0]
     }

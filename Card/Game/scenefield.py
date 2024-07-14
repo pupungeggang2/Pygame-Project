@@ -6,7 +6,7 @@ def loop():
     if var.menu == False:
         if var.state == '':
             funcfield.move_player()
-            funcfield.camera_adjust()
+            funcfield.move_camera()
 
     display()
 
@@ -78,6 +78,9 @@ def key_down(key):
         if var.state == '':
             if key == pygame.K_i:
                 var.state = 'info'
+
+            elif key == pygame.K_e:
+                funcfield.move_field()
 
         elif var.state == 'info':
             if key == pygame.K_i:
