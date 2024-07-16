@@ -5,7 +5,7 @@ import funcsave
 
 def init():
     pygame.init()
-    var.screen = pygame.display.set_mode(var.resolution)
+    var.screen = pygame.display.set_mode(var.resolution, pygame.SCALED)
     pygame.display.set_caption('Card')
     var.clock = pygame.time.Clock()
 
