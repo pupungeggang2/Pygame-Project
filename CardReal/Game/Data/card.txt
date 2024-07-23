@@ -1,4 +1,0 @@
-{
-    "1" : {"ID" : 1, "name" : "Attack", "element" : "", "energy" : ["Any", "Any"], "type" : "attack", "effect" : 1, "damage" : [3, 1]},
-    "2" : {"ID" : 1, "name" : "Attack", "element" : "", "energy" : ["Any", "Any", "Any"], "type" : "attack", "effect" : 1, "damage" : [3, 1]}
-}
