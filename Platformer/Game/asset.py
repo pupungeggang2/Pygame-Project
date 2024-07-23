@@ -1,2 +1,2 @@
 class Font():
-    neodgm_32 = None
+    main_32 = None
