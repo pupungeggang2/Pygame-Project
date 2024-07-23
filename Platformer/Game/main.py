@@ -1,0 +1,44 @@
+import sys, ast, pygame
+import asset, UI, data, const, var
+import scenetitle, scenefield
+
+def init():
+    pygame.init()
+    var.screen = pygame.display.set_mode(var.resolution, pygame.SCALED)
+    pygame.display.set_caption('Desserterria')
+    var.clock = pygame.time.Clock()
+
+    load_font()
+    load_image()
+    load_data()
+
+def load_font():
+    pygame.font.init()
+
+    try:
+        asset.Font.neodgm_32 = pygame.font.Font('Font/neodgm.ttf')
+    except:
+        asset.Font.neodgm_32 = pygame.font.SysFont(None, 32)
+
+def load_image():
+    pass
+
+def load_data():
+    pass
+
+def main():
+    while True:
+        handle_scene()
+        handle_input()
+
+def handle_scene():
+    pass
+
+def handle_input():
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            sys.exit()
+
+if __name__ == '__main__':
+    init()
+    main()
