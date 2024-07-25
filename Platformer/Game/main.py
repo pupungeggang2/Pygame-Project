@@ -56,6 +56,8 @@ def handle_input():
                 scenefield.mouse_up(x, y, button)
 
         if event.type == pygame.KEYDOWN:
+            key = event.key
+
             if var.scene == 'title':
                 scenetitle.key_down(key)
 
@@ -63,6 +65,8 @@ def handle_input():
                 scenefield.key_down(key)
 
         if event.type == pygame.KEYUP:
+            key = event.key
+
             if var.scene == 'title':
                 scenetitle.key_up(key)
 

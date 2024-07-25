@@ -6,3 +6,22 @@ clock = None
 scene = 'title'
 state = ''
 menu = False
+
+class Selected():
+    class Cursor():
+        title = 0
+        menu = 0
+
+class Player():
+    speed = 200
+    ground = True
+    position = [80, 640]
+
+    jump_power = 0
+    jump_time = 0
+    jump_num = 1
+    y_speed = 0
+
+class Field():
+    camera = [0, 0]
+    tile = []
