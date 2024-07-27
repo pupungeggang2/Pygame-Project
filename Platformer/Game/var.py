@@ -15,6 +15,7 @@ class Selected():
 class Player():
     speed = 200
     ground = True
+    stepping = -1
     position = [80, 640]
 
     jump_power = 0

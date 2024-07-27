@@ -19,13 +19,16 @@ class Player():
     y_speed = 0
 
     ground = False
+    stepping = -1
     jump_num = 1
     jump_power = -400
     jump_time = 0
 
 class Field():
     thing = [
-        {'type' : 'wall', 'rect' : [80, 640, 320, 80]}
+        {'type' : 'wall', 'rect' : [80, 640, 320, 80]},
+        {'type' : 'wall', 'rect' : [80, 320, 320, 80]},
+        {'type' : 'wall', 'rect' : [800, 320, 80, 400]}
     ]
     camera = [0, 0]
     gravity = 1200
