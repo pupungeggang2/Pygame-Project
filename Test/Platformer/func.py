@@ -10,4 +10,14 @@ def move_camera():
     pass
 
 def move_player():
-    pass
+    var.Player.position_temp[0] = var.Player.position[0]
+    var.Player.position_temp[1] = var.Player.position[1]
+    
+    if var.Input.left == True:
+        var.Player.position_temp[0] -= var.Player.speed / var.FPS
+    
+    if var.Input.right == True:
+        var.Player.position_temp[0] += var.Player.speed / var.FPS
+
+    var.Player.position[0] = var.Player.position_temp[0]
+    var.Player.position[1] = var.Player.position_temp[1]
