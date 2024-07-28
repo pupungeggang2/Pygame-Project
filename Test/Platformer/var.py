@@ -25,6 +25,7 @@ class Player():
     jump_time = 0
 
 class Field():
+    size = [12000, 800]
     thing = [
         {'type' : 'wall', 'rect' : [80, 640, 320, 80]},
         {'type' : 'wall', 'rect' : [80, 320, 320, 80]},

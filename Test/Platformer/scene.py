@@ -8,6 +8,7 @@ def loop():
     if var.menu == False:
         if var.state == '':
             func.move_player()
+            func.move_camera()
 
 def display():
     var.screen.fill(const.Color.white)
