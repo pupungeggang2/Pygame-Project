@@ -1,4 +1,4 @@
-import ast
+import ast, random
 import data, const, var
 
 def point_inside_rect(x, y, r1, r2, r3, r4):
@@ -16,6 +16,21 @@ def convert_adventure_deck_to_game():
 
     for i in range(len(var.Adventure.deck_crystal)):
         var.Game.deck_crystal.append(ast.literal_eval(str(data.crystal[var.Adventure.deck_crystal[i]])))
+
+def shuffle_deck():
+    temp_deck_card = []
+    temp_deck_crystal = []
+
+    while len(var.Game.deck_card) > 0:
+        index = random.randint(0, len(var.Game.deck_card) - 1)
+        temp_deck_card.append(var.Game.deck_card.pop(index))
+
+    while len(var.Game.deck_crystal) > 0:
+        index = random.randint(0, len(var.Game.deck_crystal) - 1)
+        temp_deck_crystal.append(var.Game.deck_crystal.pop(index))
+
+    var.Game.deck_card = temp_deck_card
+    var.Game.deck_crystal = temp_deck_crystal
 
 def change_start_card():
     for i in range(3):

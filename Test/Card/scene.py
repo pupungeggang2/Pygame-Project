@@ -8,6 +8,8 @@ def loop():
 def display():
     var.screen.fill(const.Color.white)
 
+    draw.draw_lower()
+
     if var.state == 'start' or var.state == 'start_confirm':
         draw.draw_start()
 
@@ -28,3 +30,7 @@ def mouse_up(x, y, button):
                 if func.point_inside_rect_array(x, y, UI.Start.button_start):
                     func.change_start_card()
                     var.state = 'start_confirm'
+
+            elif var.state == 'start_confirm':
+                if func.point_inside_rect_array(x, y, UI.Start.button_start):
+                    var.state = ''

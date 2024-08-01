@@ -15,6 +15,7 @@ def init():
     load_data()
 
     func.convert_adventure_deck_to_game()
+    func.shuffle_deck()
 
 def load_font():
     pygame.font.init()

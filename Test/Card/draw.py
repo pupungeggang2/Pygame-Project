@@ -27,3 +27,6 @@ def draw_card(position, card):
 
     for i in range(len(card['crystal'])):
         var.screen.blit(asset.Image.crystal_cost[card['crystal'][i]], [position[0] + UI.Card.crystal[i][0], position[1] + UI.Card.crystal[i][1]])
+
+def draw_lower():
+    pygame.draw.rect(var.screen, const.Color.black, UI.Lower.hand_crystal, 2)
