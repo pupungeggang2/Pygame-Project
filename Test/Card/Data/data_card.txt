@@ -1,6 +1,6 @@
 {
-    1 : {'ID' : 1, 'name' : '1', 'type' : 'unit', 'element' : 'normal', 'crystal' : ['any'], 'stat' : [1, 2], 'effect' : ''},
-    2 : {'ID' : 2, 'name' : '2', 'type' : 'unit', 'element' : 'normal', 'crystal' : ['any', 'any'], 'stat' : [2, 3], 'effect' : ''},
-    3 : {'ID' : 3, 'name' : '3', 'type' : 'unit', 'element' : 'normal', 'crystal' : ['any', 'any', 'any'], 'stat' : [3, 4], 'effect' : ''},
-    1001 : {'ID' : 1001, 'name' : '4', 'type' : 'unit', 'element' : 'normal', 'crystal' : ['fire', 'any', 'any'], 'stat' : [3, 3], 'effect' : ''}
+    1 : {'ID' : 1, 'name' : '1', 'type' : 'unit', 'element' : 'normal', 'crystal' : ['any'], 'crystal_filled' : [-1], 'stat' : [1, 2], 'effect' : 'Input(x)|Summon(x/1/2/None)'},
+    2 : {'ID' : 2, 'name' : '2', 'type' : 'unit', 'element' : 'normal', 'crystal' : ['any', 'any'], 'crystal_filled' : [-1, -1], 'stat' : [2, 3], 'effect' : ''},
+    3 : {'ID' : 3, 'name' : '3', 'type' : 'unit', 'element' : 'normal', 'crystal' : ['any', 'any', 'any'], 'crystal_filled' : [-1, -1, -1], 'stat' : [3, 4], 'effect' : ''},
+    1001 : {'ID' : 1001, 'name' : '4', 'type' : 'unit', 'element' : 'normal', 'crystal' : ['fire', 'any', 'any'], 'crystal_filled' : [-1, -1, -1], 'stat' : [3, 3], 'effect' : 'Input(x)|Summon(x/3/3/None)|Input(y)|Damage(y/3)'}
 }

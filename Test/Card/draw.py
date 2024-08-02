@@ -28,5 +28,40 @@ def draw_card(position, card):
     for i in range(len(card['crystal'])):
         var.screen.blit(asset.Image.crystal_cost[card['crystal'][i]], [position[0] + UI.Card.crystal[i][0], position[1] + UI.Card.crystal[i][1]])
 
+    if card['type'] == 'unit':
+        var.screen.blit(asset.Font.main_32.render(str(card['stat'][0]), False, const.Color.black), [position[0] + UI.Card.attack[0], position[1] + UI.Card.attack[1]])
+        var.screen.blit(asset.Font.main_32.render(str(card['stat'][1]), False, const.Color.black), [position[0] + UI.Card.hp[0], position[1] + UI.Card.hp[1]])
+
+def draw_field():
+    for i in range(14):
+        pygame.draw.rect(var.screen, const.Color.white, UI.Field.unit[i])
+        pygame.draw.rect(var.screen, const.Color.black, UI.Field.unit[i], 2)
+
+    pygame.draw.rect(var.screen, const.Color.white, UI.turn_end)
+    pygame.draw.rect(var.screen, const.Color.black, UI.turn_end, 2)
+
 def draw_lower():
-    pygame.draw.rect(var.screen, const.Color.black, UI.Lower.hand_crystal, 2)
+    for i in range(len(var.Game.hand_card)):
+        draw_card(UI.Lower.hand_card[i], var.Game.hand_card[i])
+
+    if var.Game.selected_hand_card != -1:
+        draw_card(UI.Lower.hand_card_pop[var.Game.selected_hand_card], var.Game.hand_card[var.Game.selected_hand_card])
+
+    for i in range(len(var.Game.hand_crystal)):
+        var.screen.blit(asset.Image.crystal[var.Game.hand_crystal[i]['ID']], UI.Lower.hand_crystal[i])
+
+    if var.Game.selected_hand_crystal != -1:
+        pygame.draw.rect(var.screen, const.Color.blue, UI.Lower.hand_crystal[i], 2)
+
+def draw_crystal_slot():
+    temp_card = var.Game.hand_card[var.Game.selected_hand_card]
+
+    for i in range(len(temp_card['crystal'])):
+        pygame.draw.rect(var.screen, const.Color.black, UI.Lower.card_crystal_slot[i], 2)
+        var.screen.blit(asset.Image.crystal_transparent[temp_card['crystal'][i]], UI.Lower.card_crystal_slot[i])
+
+        if temp_card['crystal_filled'][i] != -1:
+            var.screen.blit(asset.Image.crystal[temp_card['crystal_filled'][i]], UI.Lower.card_crystal_slot[i])
+
+    pygame.draw.rect(var.screen, const.Color.black, UI.Lower.card_cancel, 2)
+    pygame.draw.rect(var.screen, const.Color.black, UI.Lower.card_confirm, 2)
