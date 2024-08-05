@@ -6,11 +6,11 @@ from OpenGL.GLU import *
 
 vertices = ((1, 1, 1), (1, 1, -1), (1, -1, -1), (1, -1, 1), (-1, 1, 1), (-1, -1, -1), (-1, -1, 1), (-1, 1, -1))
 
-edge = ((0, 1), (1, 2), (2, 3), (3, 0), (4, 7), (7, 5), (5, 6), (6, 4), (3, 6), (0, 4), (2, 5), (1, 7))
+face = ((0, 1, 2), (0, 2, 3))
 
 def cube():
-    glBegin(GL_LINES)
-    for e in edge:
+    glBegin(GL_TRIANGLES)
+    for e in face:
         for vertex in e:
             glVertex3iv(vertices[vertex])
     glEnd()
