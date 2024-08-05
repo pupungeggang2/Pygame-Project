@@ -1,3 +1,5 @@
+import sys
+
 def run(statement, env = {}):
     result_stored = []
 
@@ -14,7 +16,7 @@ def run_single_statement(statement, env):
         return [int(statement[1]), env]
 
     elif statement[0] == 'bool':
-        if statement[1] == True:
+        if statement[1] == 'true':
             return [True, env]
         
         else:
@@ -107,6 +109,18 @@ def parse(text):
     stack = []
     return result
 
-print(parse('(let (var x) (num 4))|(add (num 2) (var x))'))
-print(run(parse('(let (var x) (num 4))|(add (num 2) (var x))')))
-print(run([['let', ['var', 'x'], ['num', 3]], ['let', ['var', 'y'], ['num', 4]], ['add', ['var', 'x'], ['var', 'y']]], {}))
+env = {}
+
+def main():
+    global env
+
+    while True:
+        a = input('> ')
+        if a == 'exit':
+            sys.exit()
+        else:
+            result = run(parse(a), env)
+            print(result)
+            env = result[1]
+
+main()
