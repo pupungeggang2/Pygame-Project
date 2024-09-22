@@ -8,6 +8,22 @@ def init():
     pygame.display.set_caption('Defense')
     var.clock = pygame.time.Clock()
 
+    load_image()
+    load_font()
+    load_data()
+
+def load_image():
+    pass
+
+def load_font():
+    try:
+        asset.Font.main_32 = pygame.font.Font('Font/neodgm.ttf', 32)
+    except:
+        asset.Font.main_32 = pygame.font.SysFont(None, 32)
+
+def load_data():
+    pass
+
 def main():
     while True:
         var.clock.tick(var.FPS)
