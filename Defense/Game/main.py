@@ -16,6 +16,7 @@ def init():
 def load_image():
     asset.Image.spawn = pygame.image.load('Image/Spawn.png')
     asset.Image.Icon.life = pygame.image.load('Image/Icon/IconLife.png')
+    asset.Image.Icon.energy = pygame.image.load('Image/Icon/IconEnergy.png')
 
 def load_font():
     try:

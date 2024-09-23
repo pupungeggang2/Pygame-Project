@@ -25,7 +25,11 @@ def draw_lower():
     pygame.draw.rect(var.screen, const.Color.black, UI.Game.Lower.generator, 2)
     pygame.draw.rect(var.screen, const.Color.black, UI.Game.Lower.ability, 2)
     pygame.draw.rect(var.screen, const.Color.black, UI.Game.Lower.hand_card, 2)
-    pygame.draw.rect(var.screen, const.Color.black, UI.Game.Lower.hand_energy, 2)
+
+    var.screen.blit(asset.Font.main_32.render(f'Lv.{var.Player.generator_level}', False, const.Color.black), UI.Game.Lower.text_generator_level)
 
     var.screen.blit(asset.Image.Icon.life, UI.Game.Lower.icon_life)
-    var.screen.blit(asset.Font.main_32.render(str(var.Player.life), False, const.Color.black), UI.Game.Lower.text_life)
+    var.screen.blit(asset.Font.main_32.render(f'{var.Player.life}', False, const.Color.black), UI.Game.Lower.text_life)
+
+    var.screen.blit(asset.Image.Icon.energy, UI.Game.Lower.icon_energy)
+    var.screen.blit(asset.Font.main_32.render(f'{var.Player.energy : .1f}/{var.Player.energy_max}'.strip(), False, const.Color.black), UI.Game.Lower.text_energy)

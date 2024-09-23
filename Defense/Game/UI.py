@@ -20,10 +20,12 @@ class Game():
         bar_energy = []
         generator = [80, 600, 80, 80]
         ability = [160, 600, 80, 80]
-        icon_life = [80, 560]
-        text_life = [128, 564]
+        text_generator_level = [84, 564]
+        icon_life = [160, 560]
+        text_life = [204, 564]
+        icon_energy = [240, 560]
+        text_energy = [284, 564]
         hand_card = [240, 600, 640, 80]
-        hand_energy = [880, 600, 320, 80]
     
     class Start():
         rect = [80, 80, 1120, 560]

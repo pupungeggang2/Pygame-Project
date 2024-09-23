@@ -6,3 +6,4 @@ class Image():
 
     class Icon():
         life = None
+        energy = None

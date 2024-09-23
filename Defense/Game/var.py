@@ -18,9 +18,9 @@ class Player():
     life = 20
     generator_level = 1
     generator_speed = 0.5
-    max_crystal = 6
-    deck_crystal = []
-    hand_crystal = []
+    energy = 3
+    energy_max = 6
+    energy_gen = 0.5
     deck_card = []
     hand_card = []
 

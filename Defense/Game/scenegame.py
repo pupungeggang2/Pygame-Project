@@ -1,8 +1,12 @@
 import pygame
 import asset, UI, data, var, const
-import funcphysics, funcdraw
+import funcphysics, funcdraw, funcgame
 
 def loop():
+    if var.menu == False:
+        if var.state == '':
+            funcgame.game_tick()
+            
     display()
 
 def display():
