@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys, ast
 import data, asset, UI, var, const
 import scenetitle, scenelevelselect, scenegame
 
@@ -11,9 +11,11 @@ def init():
     load_image()
     load_font()
     load_data()
+    load_save()
 
 def load_image():
-    pass
+    asset.Image.spawn = pygame.image.load('Image/Spawn.png')
+    asset.Image.Icon.life = pygame.image.load('Image/Icon/IconLife.png')
 
 def load_font():
     try:
@@ -22,7 +24,31 @@ def load_font():
         asset.Font.main_32 = pygame.font.SysFont(None, 32)
 
 def load_data():
-    pass
+    f = open('Data/card.txt', 'r')
+    data.card = ast.literal_eval(f.read())
+    f.close()
+    f = open('Data/level.txt', 'r')
+    data.level = ast.literal_eval(f.read())
+    f.close()
+    f = open('Data/monster.txt', 'r')
+    data.monster = ast.literal_eval(f.read())
+    f.close()
+    f = open('Data/unit.txt', 'r')
+    data.unit = ast.literal_eval(f.read())
+    f.close()
+
+def load_save():
+    try:
+        f = open('Save/save.txt', 'r')
+        var.save = ast.literal_eval(f.read())
+        f.close()
+    except:
+        f = open('Save/save.txt', 'w')
+        f.write(str({}))
+        f.close()
+        f = open('Save/save.txt', 'r')
+        var.save = ast.literal_eval(f.read())
+        f.close()
 
 def main():
     while True:
